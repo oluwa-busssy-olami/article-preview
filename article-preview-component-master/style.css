@@ -99,6 +99,10 @@ body {
   padding-right: 20px;
 }
 
+.shareIcon {
+  cursor: pointer;
+}
+
 .social-icon {
   display: flex;
   justify-content: center;

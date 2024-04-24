@@ -37,7 +37,7 @@ body {
 .main-container {
   background-color: #fff;
   border-radius: 10px;
-  overflow: hidden;
+  /* overflow: hidden; */
   margin-bottom: 30px;
   color: var(--VeryDarkGrayishBlue);
 }
@@ -49,7 +49,7 @@ body {
 .text-container h1 {
   font-size: 1rem;
   line-height: 1.3;
-  padding-bottom: 15px;
+  padding-bottom: 20px;
   font-weight: 700;
 }
 
@@ -61,13 +61,14 @@ body {
   color: var(--DesaturatedDarkBlue);
 }
 
-.img-container img {
+.drawers {
   height: 250px;
   width: 100%;
 }
 
 .profile-container {
   position: relative;
+  padding-top: 15px;
 }
 
 .shared {
@@ -80,13 +81,19 @@ body {
   display: flex;
   height: 0;
   overflow: hidden;
+  padding: 0 20px;
   justify-content: space-between;
   align-items: center;
   color: #fff;
   border-radius: 0 0 20px 20px;
+  transition: all 0.4s ease-in-out;
 }
 
-.shared .clicked {
+.share-social-icon {
+  cursor: pointer;
+}
+
+.clicked {
   height: 90px;
   overflow: auto;
 }
@@ -99,8 +106,14 @@ body {
   padding-right: 20px;
 }
 
+.shared-icon img {
+  width: 20px;
+  height: 20px;
+}
+
 .shareIcon {
   cursor: pointer;
+  width: 20px;
 }
 
 .social-icon {
@@ -111,14 +124,17 @@ body {
   padding-right: 10px;
 }
 
-.social-icon p {
+.shared p {
   text-transform: uppercase;
   color: var(--GrayishBlue);
+  font-size: 0.9rem;
+  font-weight: bold;
+  letter-spacing: 1.2px;
 }
 
 .social-icon ul li {
   margin: 0 15px;
-  align-items: center;
+  /* align-items: center; */
 }
 
 .social-icon ul {
@@ -157,9 +173,45 @@ body {
   font-size: 0.7rem;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 768px) {
   .main-container {
-    max-width: 750px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .img-container img {
+    border-radius: 20px 0 0 20px;
+    width: 1000px;
+    height: 100%;
+  }
+  .text-container h1 {
+    font-size: 1.2rem;
+    line-height: 1.3;
+  }
+  .text-container p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  .shared {
+    left: 50%;
+    bottom: 50px;
+    width: 300px;
+    height: 60px;
+    border-radius: 20px;
+  }
+}
+
+@media (min-width: 990px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  .main-container {
+    max-width: 800px;
     margin: auto;
+  }
+  .img-container img {
   }
 }
